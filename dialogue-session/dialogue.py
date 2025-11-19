@@ -338,7 +338,7 @@ if st.session_state.current_page == "dialogue":
                 try:
                     judge_result = judge_turn_advance(previous_counselor_message, previous_user_reply)
                 except Exception as e:
-                    print(f"ジャッジエラーが発生しました。再試行します；{e}")
+                    print(f"ジャッジエラーが発生しました。再試行します：{e}")
 
             st.session_state.should_advance_turn = judge_result
             if judge_result:
