@@ -26,6 +26,7 @@ if st.session_state.current_page == "attention":
 
     if st.button("対話セッションを始める"):
         st.session_state.current_page = "dialogue"
+        st.session_state.speaker = "counselor"
         st.rerun()
 
 else:

@@ -354,6 +354,7 @@ if st.session_state.current_page == "dialogue":
 
     # 21ターン終了
     if st.session_state.counselor_turn == len(scenario_data):
+        st.session_state.speaker = "finished"
         time.sleep(1)
         st.success("これで対話セッションは終了です。")
         if st.button("説明に戻る"):
@@ -361,7 +362,6 @@ if st.session_state.current_page == "dialogue":
             st.session_state.counselor_turn = 1 
             st.session_state.messages_for_counselor = []
             st.session_state.should_advance_turn = True
-            st.session_state.speaker = "counselor"
             st.session_state.dialogue_history = []
             st.session_state.deviation_history = []
             st.rerun()
